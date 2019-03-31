@@ -22,7 +22,9 @@ class Application
   end
   
   if req.path.match(/cart/)
-    @@cart   
+    @@cart.each do |item|
+      resp.write "#{item}\n"
+    end   
   end 
 
   def handle_search(search_term)
